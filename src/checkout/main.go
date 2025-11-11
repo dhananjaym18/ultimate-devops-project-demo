@@ -607,5 +607,7 @@ func (cs *checkout) getIntFeatureFlag(ctx context.Context, featureFlagName strin
 		openfeature.EvaluationContext{},
 	)
 
+
+	
 	return int(featureFlagValue)
 }
