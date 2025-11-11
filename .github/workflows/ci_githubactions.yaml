@@ -22,9 +22,9 @@ jobs:
         
         - name: build 
           run: |
-            cd src/product-catalog
+            cd /src/product-catalog
             go mod download 
-            go build -o product-catalog-service /main.go
+            go build -o product-catalog-service main.go
 
         - name: unit tests
           run: |
@@ -33,7 +33,7 @@ jobs:
 
     code-quality:
         runs-on: ubuntu-latest
-
+gi 
         steps:
         
         - name: checkout code
