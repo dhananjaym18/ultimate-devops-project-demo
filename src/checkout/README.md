@@ -26,7 +26,7 @@ To build the protos, run from the root directory:
 make docker-generate-protobuf
 ```
 
-## Bump dependencies.
+## Bump dependencies..
 
 To bump all dependencies run:
 
