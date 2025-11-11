@@ -1,10 +1,8 @@
 #sameple CI workflow showcasing GitHub Actions for Product Catalog Service
 # CI for Product Catalog Service
 name: product-catalog-ci
-on: 
-    pull_request:
-        branches:
-        - main
+on: push
+    
 
 jobs:
     build:
