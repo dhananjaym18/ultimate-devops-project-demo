@@ -33,7 +33,6 @@ jobs:
 
     code-quality:
         runs-on: ubuntu-latest
-gi 
         steps:
         
         - name: checkout code
