@@ -78,10 +78,9 @@ jobs:
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
             
-            - name: update k8s deployment
-              run: |
-                sed -i "s/image: .*/image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}|g" kubernetes/product-catalog-deployment.yaml
-
+            - name: Update tag in kubernetes deployment manifest
+              run: | 
+               sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}|" kubernetes/productcatalog/deploy.yaml
             - name: commit and push changes
               run: |
                 git config --global user.name "dhananjay.m.18"
