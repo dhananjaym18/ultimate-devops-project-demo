@@ -22,7 +22,7 @@ jobs:
         
         - name: build 
           run: |
-            cd /src/product-catalog
+            cd src/product-catalog
             go mod download 
             go build -o product-catalog-service main.go
 
@@ -33,9 +33,7 @@ jobs:
 
     code-quality:
         runs-on: ubuntu-latest
-gi 
         steps:
-        
         - name: checkout code
           uses: actions/checkout@v4
 
