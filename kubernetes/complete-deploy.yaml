@@ -27,9 +27,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-adservice
@@ -50,9 +50,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-cartservice
@@ -73,9 +73,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-checkoutservice
@@ -96,9 +96,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-currencyservice
@@ -119,9 +119,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-emailservice
@@ -168,9 +168,9 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-frontend
@@ -191,9 +191,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-frontendproxy
@@ -286,9 +286,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-paymentservice
@@ -309,9 +309,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-productcatalogservice
@@ -332,9 +332,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-quoteservice
@@ -355,9 +355,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-recommendationservice
@@ -378,9 +378,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8085
       name: tcp-service
-      targetPort: 8080
+      targetPort: 8085
   selector:
     
     opentelemetry.io/name: opentelemetry-demo-shippingservice
@@ -508,7 +508,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -521,7 +521,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: AD_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: FLAGD_HOST
               value: 'opentelemetry-demo-flagd'
             - name: FLAGD_PORT
@@ -574,7 +574,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -587,7 +587,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: CART_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: ASPNETCORE_URLS
               value: http://*:$(CART_SERVICE_PORT)
             - name: VALKEY_ADDR
@@ -650,7 +650,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -663,19 +663,19 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: CHECKOUT_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: CART_SERVICE_ADDR
-              value: 'opentelemetry-demo-cartservice:8080'
+              value: 'opentelemetry-demo-cartservice:8085'
             - name: CURRENCY_SERVICE_ADDR
-              value: 'opentelemetry-demo-currencyservice:8080'
+              value: 'opentelemetry-demo-currencyservice:8085'
             - name: EMAIL_SERVICE_ADDR
-              value: http://opentelemetry-demo-emailservice:8080
+              value: http://opentelemetry-demo-emailservice:8085
             - name: PAYMENT_SERVICE_ADDR
-              value: 'opentelemetry-demo-paymentservice:8080'
+              value: 'opentelemetry-demo-paymentservice:8085'
             - name: PRODUCT_CATALOG_SERVICE_ADDR
-              value: 'opentelemetry-demo-productcatalogservice:8080'
+              value: 'opentelemetry-demo-productcatalogservice:8085'
             - name: SHIPPING_SERVICE_ADDR
-              value: 'opentelemetry-demo-shippingservice:8080'
+              value: 'opentelemetry-demo-shippingservice:8085'
             - name: KAFKA_SERVICE_ADDR
               value: 'opentelemetry-demo-kafka:9092'
             - name: FLAGD_HOST
@@ -736,7 +736,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -749,7 +749,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: CURRENCY_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: http://$(OTEL_COLLECTOR_NAME):4317
             - name: VERSION
@@ -798,7 +798,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -811,7 +811,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: EMAIL_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: APP_ENV
               value: production
             - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
@@ -1041,7 +1041,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -1054,23 +1054,23 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: FRONTEND_PORT
-              value: "8080"
+              value: "8085"
             - name: FRONTEND_ADDR
-              value: :8080
+              value: :8085
             - name: AD_SERVICE_ADDR
-              value: 'opentelemetry-demo-adservice:8080'
+              value: 'opentelemetry-demo-adservice:8085'
             - name: CART_SERVICE_ADDR
-              value: 'opentelemetry-demo-cartservice:8080'
+              value: 'opentelemetry-demo-cartservice:8085'
             - name: CHECKOUT_SERVICE_ADDR
-              value: 'opentelemetry-demo-checkoutservice:8080'
+              value: 'opentelemetry-demo-checkoutservice:8085'
             - name: CURRENCY_SERVICE_ADDR
-              value: 'opentelemetry-demo-currencyservice:8080'
+              value: 'opentelemetry-demo-currencyservice:8085'
             - name: PRODUCT_CATALOG_SERVICE_ADDR
-              value: 'opentelemetry-demo-productcatalogservice:8080'
+              value: 'opentelemetry-demo-productcatalogservice:8085'
             - name: RECOMMENDATION_SERVICE_ADDR
-              value: 'opentelemetry-demo-recommendationservice:8080'
+              value: 'opentelemetry-demo-recommendationservice:8085'
             - name: SHIPPING_SERVICE_ADDR
-              value: 'opentelemetry-demo-shippingservice:8080'
+              value: 'opentelemetry-demo-shippingservice:8085'
             - name: FLAGD_HOST
               value: 'opentelemetry-demo-flagd'
             - name: FLAGD_PORT
@@ -1082,7 +1082,7 @@ spec:
             - name: WEB_OTEL_SERVICE_NAME
               value: frontend-web
             - name: PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-              value: http://localhost:8080/otlp-http/v1/traces
+              value: http://localhost:8085/otlp-http/v1/traces
             - name: OTEL_RESOURCE_ATTRIBUTES
               value: service.name=$(OTEL_SERVICE_NAME),service.namespace=opentelemetry-demo,service.version=1.12.0
           resources:
@@ -1131,7 +1131,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -1144,7 +1144,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: ENVOY_PORT
-              value: "8080"
+              value: "8085"
             - name: FLAGD_HOST
               value: 'opentelemetry-demo-flagd'
             - name: FLAGD_PORT
@@ -1156,7 +1156,7 @@ spec:
             - name: FRONTEND_HOST
               value: 'opentelemetry-demo-frontend'
             - name: FRONTEND_PORT
-              value: "8080"
+              value: "8085"
             - name: GRAFANA_SERVICE_HOST
               value: 'opentelemetry-demo-grafana'
             - name: GRAFANA_SERVICE_PORT
@@ -1376,7 +1376,7 @@ spec:
             - name: LOCUST_SPAWN_RATE
               value: "1"
             - name: LOCUST_HOST
-              value: http://opentelemetry-demo-frontendproxy:8080
+              value: http://opentelemetry-demo-frontendproxy:8085
             - name: LOCUST_HEADLESS
               value: "false"
             - name: LOCUST_AUTOSTART
@@ -1435,7 +1435,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -1448,7 +1448,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: PAYMENT_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: FLAGD_HOST
               value: 'opentelemetry-demo-flagd'
             - name: FLAGD_PORT
@@ -1503,7 +1503,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -1516,7 +1516,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: PRODUCT_CATALOG_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: FLAGD_HOST
               value: 'opentelemetry-demo-flagd'
             - name: FLAGD_PORT
@@ -1567,7 +1567,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -1580,7 +1580,7 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: QUOTE_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: OTEL_PHP_AUTOLOAD_ENABLED
               value: "true"
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
@@ -1633,7 +1633,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -1646,9 +1646,9 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: RECOMMENDATION_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: PRODUCT_CATALOG_SERVICE_ADDR
-              value: 'opentelemetry-demo-productcatalogservice:8080'
+              value: 'opentelemetry-demo-productcatalogservice:8085'
             - name: OTEL_PYTHON_LOG_CORRELATION
               value: "true"
             - name: PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION
@@ -1700,7 +1700,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             
-            - containerPort: 8080
+            - containerPort: 8085
               name: service
           env:
             - name: OTEL_SERVICE_NAME
@@ -1713,9 +1713,9 @@ spec:
             - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
               value: cumulative
             - name: SHIPPING_SERVICE_PORT
-              value: "8080"
+              value: "8085"
             - name: QUOTE_SERVICE_ADDR
-              value: http://opentelemetry-demo-quoteservice:8080
+              value: http://opentelemetry-demo-quoteservice:8085
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: http://$(OTEL_COLLECTOR_NAME):4317
             - name: OTEL_RESOURCE_ATTRIBUTES
